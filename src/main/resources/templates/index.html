@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<tr th:each="Info : ${datalist}">
+		<td th:utext="${datalist.productBrand}">...</td>
+		<td th:utext="${datalist.productPrice}">...</td>
+	</tr>
+</body>
+</html>
