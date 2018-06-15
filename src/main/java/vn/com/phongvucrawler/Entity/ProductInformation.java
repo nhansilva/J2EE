@@ -9,20 +9,14 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "ProductInformation")
 public class ProductInformation {
-	@Id
 	private String productId;
-	@Field(value = "productName")
 	private String productName;
-	@Field(value = "productPrice")
 	private String productPrice;
-	@Field(value = "productBrand")
 	private String productBrand;
-	@Field(value = "Emp_No")
-	private List<String> productCatelogies;
-	private List<String> productImages;
+	private List<String> productCatelogy;
+	private List<String> productImage;
 	private String productDescription;
-	private HashMap<String, String> productSpecifications;
-	@Field(value = "productUrl")
+	private HashMap<String, String> productSpecification;
 	private String productUrl;
 	public String getProductId() {
 		return productId;
@@ -49,16 +43,16 @@ public class ProductInformation {
 		this.productBrand = productBrand;
 	}
 	public List<String> getProductCatelogies() {
-		return productCatelogies;
+		return productCatelogy;
 	}
 	public void setProductCatelogies(List<String> productCatelogies) {
-		this.productCatelogies = productCatelogies;
+		this.productCatelogy = productCatelogies;
 	}
 	public List<String> getProductImages() {
-		return productImages;
+		return productImage;
 	}
 	public void setProductImages(List<String> productImages) {
-		this.productImages = productImages;
+		this.productImage = productImages;
 	}
 	public String getProductDescription() {
 		return productDescription;
@@ -67,10 +61,10 @@ public class ProductInformation {
 		this.productDescription = productDescription;
 	}
 	public HashMap<String, String> getProductSpecifications() {
-		return productSpecifications;
+		return productSpecification;
 	}
 	public void setProductSpecifications(HashMap<String, String> productSpecifications) {
-		this.productSpecifications = productSpecifications;
+		this.productSpecification = productSpecifications;
 	}
 	public String getProductUrl() {
 		return productUrl;
