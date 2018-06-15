@@ -20,7 +20,7 @@ public class HomeController {
 	@RequestMapping(value = { "/List" }, method = RequestMethod.GET)
 	public String Home(Model model) {
 		List<ProductInformation> ls = new ArrayList<>();
-		ls = this.data.findAll();
+		ls = (List<ProductInformation>) data.findAll();
 		model.addAttribute("datalist", ls);
 		System.out.println("Hello");
 		if (ls.isEmpty()) {
