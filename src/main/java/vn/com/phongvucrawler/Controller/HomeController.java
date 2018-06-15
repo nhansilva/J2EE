@@ -13,7 +13,7 @@ public class HomeController {
 	@Autowired
 	PVDataRepository data;
 
-	@RequestMapping(value = { "/personList" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/List" }, method = RequestMethod.GET)
 	public String Home(Model model) {
 		model.addAttribute("datalist", data.findAll());
 		return "index";
