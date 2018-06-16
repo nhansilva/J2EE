@@ -12,7 +12,6 @@ import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
 import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import vn.com.phongvucrawler.DAO.MongoDBService;
 
 @SpringBootApplication
 @EnableMongoRepositories("vn.com.phongvucrawler.Repository")
@@ -31,13 +30,6 @@ public class PhongVuCrawlerApplication {
      * @param context
      * @return
      */
-//    @Bean
-//    public MongoTemplate mongoTemplate(MongoDbFactory mongoDbFactory, MongoMappingContext context) {   
-//        MappingMongoConverter converter = new MappingMongoConverter(new DefaultDbRefResolver(mongoDbFactory), context);        
-//        converter.setTypeMapper(new DefaultMongoTypeMapper(null));
-//        MongoTemplate mongoTemplate = new MongoTemplate(mongoDbFactory, converter);
-//        return mongoTemplate;
-//    }
     
     @Bean
     public MongoTemplate mongoTemplate(MongoDbFactory mongoDbFactory, MongoMappingContext context){
