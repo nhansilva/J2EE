@@ -19,9 +19,9 @@ public class HomeController {
 
 	@RequestMapping(value = { "/List" }, method = RequestMethod.GET)
 	public String Home(Model model) {
-//		List<ProductInformation> ls = new ArrayList<ProductInformation>();
-//		ls = (ArrayList<ProductInformation>) data.findAll();
-		data.
+		List<ProductInformation> ls = new ArrayList<ProductInformation>();
+		ls = (ArrayList<ProductInformation>) data.findAll();
+		
 		System.out.println("Hello");
 		if (ls.isEmpty()) {
 			System.out.println("null");
