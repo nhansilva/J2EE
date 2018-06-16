@@ -1,4 +1,4 @@
-package vn.com.phongvucrawler.Entity;
+package vn.com.phongvucrawler.Model;
 
 import java.util.HashMap;
 import java.util.List;
