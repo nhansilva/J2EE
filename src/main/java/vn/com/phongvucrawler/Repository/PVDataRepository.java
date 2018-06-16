@@ -1,10 +1,10 @@
 package vn.com.phongvucrawler.Repository;
 
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import vn.com.phongvucrawler.Entity.ProductInformation;
 
-public interface PVDataRepository extends CrudRepository<ProductInformation, Long>  {
+public interface PVDataRepository extends MongoRepository<ProductInformation, Long>  {
 	
 }
