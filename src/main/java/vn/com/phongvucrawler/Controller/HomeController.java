@@ -2,6 +2,7 @@ package vn.com.phongvucrawler.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import static java.lang.System.out;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

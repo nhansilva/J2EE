@@ -5,6 +5,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import vn.com.phongvucrawler.Entity.ProductInformation;
 
-public interface PVDataRepository extends MongoRepository<ProductInformation, Long>  {
+public interface PVDataRepository extends MongoRepository<ProductInformation, String>  {
 	
 }
