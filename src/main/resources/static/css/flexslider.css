@@ -97,17 +97,16 @@ html[xmlns] .flexslider .slides {
 .flexslider .slides img {
   height: auto;
 }
-.flex-viewport { 
+.flex-viewport {
+  max-height: 450px;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  border: 1px solid #D1CFCF; 
+
 }
-.single-left .flex-viewport { 
-	max-height: 450px;
-}
+
 .loading .flex-viewport {
   max-height: 300px;
 }
