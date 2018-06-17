@@ -2,6 +2,7 @@ package vn.com.phongvucrawler.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import static java.lang.System.out;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import vn.com.phongvucrawler.Entity.ProductInformation;
+import vn.com.phongvucrawler.Model.ProductInformation;
 import vn.com.phongvucrawler.Repository.PVDataRepository;
 
 @Controller
