@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"
+	media="all" />
+</head>
+<body>
+<h2 th:utext="${ls[2].productName}"></h2>
+	<div style="visibility: visible;">
+		<ul th:each="pro:${ls}">
+			<li>Name<span th:text="${pro.productName}"></span></li>
+			<li>AH<span th:text="${pro.productPrice}"></span></li>
+			
+		</ul>
+	</div>
+</body>
+</html>

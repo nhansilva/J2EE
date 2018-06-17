@@ -9,6 +9,19 @@ html, body{
 	background:	#fff;
 	font-family:'Open Sans', sans-serif;
 }
+ul {
+     list-style-type: none;
+    padding-left: 5px;
+    margin:5px;
+}
+.product-preview-container {
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 300px;
+    margin: 17px ;
+    display: inline-block;
+    text-align:left;
+}
 p{
 	margin:0;
 	font-size:14px;

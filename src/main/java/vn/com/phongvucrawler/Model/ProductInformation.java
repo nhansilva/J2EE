@@ -12,7 +12,7 @@ import org.springframework.stereotype.Indexed;
 
 @Document(collection = "ProductInformation")
 public class ProductInformation {
-    @Id
+ 
     private String productId;
     
     @Field(value = "productName")
