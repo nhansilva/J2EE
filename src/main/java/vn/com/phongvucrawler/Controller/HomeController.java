@@ -37,6 +37,6 @@ public class HomeController {
 	@RequestMapping(value = { "/hi" }, method = RequestMethod.GET)
 	public String Home1(Model model) {
 		// model.addAttribute("datalist", data.findAll());
-		return "home";
+		return "index";
 	}
 }
