@@ -1,8 +1,6 @@
 package vn.com.phongvucrawler.Repository;
 
 
-import java.util.List;
-
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import vn.com.phongvucrawler.Entity.ProductInformation;
