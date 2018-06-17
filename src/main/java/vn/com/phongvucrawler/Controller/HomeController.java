@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import vn.com.phongvucrawler.Model.ProductInformation;
 import vn.com.phongvucrawler.Repository.PVDataRepository;
 import vn.com.phongvucrawler.Repository.PVDataRepositoryCustom;
+import vn.com.phongvucrawler.Utils.StringUtils;
 
 @Controller
 public class HomeController {
@@ -103,7 +104,12 @@ public class HomeController {
 	
 	@RequestMapping(value = { "/home/{productCatelogy}/{productId}" }, method = RequestMethod.GET)
 	public String ProductDetail(Model model, @PathVariable String productCatelogy,@PathVariable String productId) {
-		// model.addAttribute("datalist", data.findAll());
+		ProductInformation pro = new ProductInformation();
+		pro = (ProductInformation) dt.findById(productId).get(0);
+		String[] proDesc = StringUtils.splitLargeStringIntoListString(pro.getProductDescription());
+		model.addAttribute("pro", pro);
+		model.addAttribute("proDesc", proDesc);
+		System.out.println(proDesc[1]);
 		return "single";
 	}
 }

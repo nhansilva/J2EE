@@ -22,4 +22,12 @@ public class PVDataRepositoryCustomImp implements PVDataRepositoryCustom {
 			ls = this.mongoTemplate.find(query, ProductInformation.class);
 			return ls;
 		}
+
+		@Override
+		public List<ProductInformation> findById(String id) {
+			List<ProductInformation> ls;
+			Query query = new Query(Criteria.where("productId").is(id));
+			ls = this.mongoTemplate.find(query, ProductInformation.class);
+			return ls;
+		}
 }
