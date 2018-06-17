@@ -73,29 +73,6 @@ public class ProductInformation {
 	public void setProductUrl(String productUrl) {
 		this.productUrl = productUrl;
 	}
-	public org.bson.Document getDocument() {
-		org.bson.Document document = new org.bson.Document();
-
-		document.append("productId", this.productId);
-
-		document.append("productUrl", this.productUrl);
-
-		document.append("productName", this.productName);
-
-		document.append("productPrice", this.productPrice);
-
-		document.append("productBrand", this.productBrand);
-
-		document.append("productDescription", this.productDescription);
-
-		document.append("productCatelogy", this.productCatelogy);
-
-		document.append("productImage", this.productImage);
-
-		BasicDBObject productDesc = new BasicDBObject(this.productSpecification);
-		document.append("productSpecification", productDesc);
-
-		return document;
-	}
+	
 	
 }
