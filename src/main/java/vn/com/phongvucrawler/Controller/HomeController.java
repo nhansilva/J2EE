@@ -18,7 +18,7 @@ public class HomeController {
 	@Autowired
 	PVDataRepository data;
 
-	@RequestMapping(value = { "/List" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/home" }, method = RequestMethod.GET)
 	public String Home(Model model) {
 		List<ProductInformation> ls = new ArrayList<ProductInformation>();
 		ls = (ArrayList<ProductInformation>) data.findAll();
@@ -31,7 +31,7 @@ public class HomeController {
 				System.out.println("Danh sach mat hang" + pro.getProductBrand());
 			}
 		}
-		return "index";
+		return "single";
 	}
 
 	@RequestMapping(value = { "/hi" }, method = RequestMethod.GET)
