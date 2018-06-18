@@ -39,12 +39,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	media="all" />
 <link th:href="@{/css/fasthover.css}" rel="stylesheet" type="text/css"
 	media="all" />
+<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 <!-- //Custom Theme files -->
 <!-- font-awesome icons -->
 <link th:href="@{/css/font-awesome.css}" rel="stylesheet">
 <!-- //font-awesome icons -->
 <!-- js -->
-<script src="js/jquery.min.js"></script>
+<script src="/js/jquery.min.js"></script>
 <!-- //js -->
 <!-- web fonts -->
 <link th:href='@{//fonts.googleapis.com/css?family=Glegoo:400,700}'
@@ -54,7 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	rel='stylesheet' type='text/css'>
 <!-- //web fonts -->
 <!-- for bootstrap working -->
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap-3.1.1.min.js"></script>
 <!-- //for bootstrap working -->
 <!-- start-smooth-scrolling -->
 <script type="text/javascript">
@@ -129,7 +130,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</div>
 								</div>
 							</div>
-							<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+							<script src="/js/easyResponsiveTabs.js" type="text/javascript"></script>
 							<script type="text/javascript">
 								$(document).ready(function() {
 									$('#horizontalTab').easyResponsiveTabs({
@@ -171,10 +172,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="header" id="home1">
 		<div class="container">
 			<div class="w3l_logo">
-				<h1>
-					<a href="index.html">Electronic Store<span>Your stores.
-							Your place.</span></a>
-				</h1>
+				<h1><a  th:href="@{/home}">Phong Vu Data Crawling<span>Your stores. Your place.</span></a></h1>
 			</div>
 			<div class="search">
 				<input class="search_box" type="checkbox" id="search_box"> <label
@@ -197,68 +195,50 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<nav class="navbar navbar-default">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header nav_2">
-					<button type="button"
-						class="navbar-toggle collapsed navbar-toggle1"
-						data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
+					<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
 					</button>
-				</div>
+				</div> 
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav">
-						<li><a href="index.html">Home</a></li>
+						<li><a th:href="@{/home}" class="act">Home</a></li>	
 						<!-- Mega Menu -->
-						<li class="dropdown"><a href="#" class="dropdown-toggle act"
-							data-toggle="dropdown">Products <b class="caret"></b></a>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm <b class="caret"></b></a>
 							<ul class="dropdown-menu multi-column columns-3">
 								<div class="row">
 									<div class="col-sm-3">
 										<ul class="multi-column-dropdown">
 											<h6>Mobiles</h6>
-											<li><a href="products.html">Mobile Phones</a></li>
-											<li><a href="products.html">Mp3 Players <span>New</span></a></li>
-											<li><a href="products.html">Popular Models</a></li>
-											<li><a href="products.html">All Tablets<span>New</span></a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=LapTop)}">LapTop</a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=Mobile)}">Điện Thoại Và Tablet</a></li> 
 										</ul>
 									</div>
 									<div class="col-sm-3">
 										<ul class="multi-column-dropdown">
-											<h6>Accessories</h6>
-											<li><a href="products1.html">Laptop</a></li>
-											<li><a href="products1.html">Desktop</a></li>
-											<li><a href="products1.html">Wearables <span>New</span></a></li>
-											<li><a href="products1.html"><i>Summer Store</i></a></li>
+											<h6>Phụ Kiên Và Thiết Bị Số</h6>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=MHMT)}">Màn Hình Máy Tính</a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=Key)}">Chuột Bàn Phím Pad</a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=PhuKien}">Phụ Kiện </a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=Audio)}">Thiết Bị Âm Thanh</a></li>
 										</ul>
 									</div>
 									<div class="col-sm-2">
 										<ul class="multi-column-dropdown">
 											<h6>Home</h6>
-											<li><a href="products2.html">Tv</a></li>
-											<li><a href="products2.html">Camera</a></li>
-											<li><a href="products2.html">AC</a></li>
-											<li><a href="products2.html">Grinders</a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=Security)}">Thiết Bị An Ninh</a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=Computer)}">Máy Tính Đồng Bộ</a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=VP)}">Thiết Bị Văn Phòng</a></li>
 										</ul>
-									</div>
-									<div class="col-sm-4">
-										<div class="w3ls_products_pos">
-											<h4>
-												30%<i>Off/-</i>
-											</h4>
-											<img src="images/1.jpg" alt=" " class="img-responsive" />
-										</div>
 									</div>
 									<div class="clearfix"></div>
 								</div>
-							</ul></li>
+							</ul>
+						</li>
 						<li><a href="about.html">About Us</a></li>
-						<li class="w3pages"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">Pages <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="icons.html">Web Icons</a></li>
-								<li><a href="codes.html">Short Codes</a></li>
-							</ul></li>
 						<li><a href="mail.html">Mail Us</a></li>
 					</ul>
 				</div>
@@ -278,9 +258,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="breadcrumb_dress">
 		<div class="container">
 			<ul>
-				<li><a href="index.html"><span
+				<li><a th:href="@{/home}"><span
 						class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
-				<li>Products</li>
+				<li th:text="${namecata}"></li>
 			</ul>
 		</div>
 	</div>
@@ -304,21 +284,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="w3_footer_grids">
 				<div class="col-md-3 w3_footer_grid">
 					<h3>Contact</h3>
-					<p>Duis aute irure dolor in reprehenderit in voluptate velit
-						esse.</p>
+					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
 					<ul class="address">
-						<li><i class="glyphicon glyphicon-map-marker"
-							aria-hidden="true"></i>1234k Avenue, 4th block, <span>New
-								York City.</span></li>
-						<li><i class="glyphicon glyphicon-envelope"
-							aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-						<li><i class="glyphicon glyphicon-earphone"
-							aria-hidden="true"></i>+1234 567 567</li>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Nhóm 20</li>
+						<li><p style="font-weight: bold; margin-left: 35px;">Võ Tài Nhân : 13520571</p></li>
+						<li><p style="font-weight: bold;margin-left: 35px;">Trần Huy Thịnh : 13520830</p></li>
+						<li><p style="font-weight: bold;margin-left: 35px;">Trần Văn Phát : 13520571</p></li>
 					</ul>
 				</div>
 				<div class="col-md-3 w3_footer_grid">
 					<h3>Information</h3>
-					<ul class="info">
+					<ul class="info"> 
 						<li><a href="about.html">About Us</a></li>
 						<li><a href="mail.html">Contact Us</a></li>
 						<li><a href="codes.html">Short Codes</a></li>
@@ -328,7 +304,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="col-md-3 w3_footer_grid">
 					<h3>Category</h3>
-					<ul class="info">
+					<ul class="info"> 
 						<li><a href="products.html">Mobiles</a></li>
 						<li><a href="products1.html">Laptops</a></li>
 						<li><a href="products.html">Purifiers</a></li>
@@ -338,7 +314,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="col-md-3 w3_footer_grid">
 					<h3>Profile</h3>
-					<ul class="info">
+					<ul class="info"> 
 						<li><a href="index.html">Home</a></li>
 						<li><a href="products.html">Today's Deals</a></li>
 					</ul>
@@ -352,23 +328,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</ul>
 					</div>
 				</div>
-				<div class="clearfix"></div>
+				<div class="clearfix"> </div>
 			</div>
 		</div>
 		<div class="footer-copy">
 			<div class="footer-copy1">
 				<div class="footer-copy-pos">
-					<a href="#home1" class="scroll"><img src="images/arrow.png"
-						alt=" " class="img-responsive" /></a>
+					<a href="#home1" class="scroll"><img src="images/arrow.png" alt=" " class="img-responsive" /></a>
 				</div>
 			</div>
 			<div class="container">
-				<p>
-					&copy; 2017 Electronic Store. All rights reserved | Design by <a
-						href="http://w3layouts.com/">W3layouts</a>
-				</p>
+				<p>&copy; 2017 Electronic Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 			</div>
 		</div>
+			</div>
+			<div class="footer-copy">
+				<div class="footer-copy1">
+					<div class="footer-copy-pos">
+						<a href="#home1" class="scroll"><img src="images/arrow.png"
+							alt=" " class="img-responsive" /></a>
+					</div>
+				</div>
+				<div class="container">
+					<p>
+						&copy; 2017 Electronic Store. All rights reserved | Design by <a
+							href="http://w3layouts.com/">W3layouts</a>
+					</p>
+				</div>
+			</div>
 	</div>
 	<!-- //footer -->
 	<script type="text/javascript">
@@ -398,9 +385,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		});
 	</script>
-	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+	<script type="text/javascript" src="/js/jquery.flexisel.js"></script>
 	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
+	<script src="/js/minicart.js"></script>
 	<script>
 		w3ls.render();
 

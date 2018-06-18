@@ -51,25 +51,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="header" id="home1">
 		<div class="container">
 			<div class="w3l_logo">
-				<h1><a href="index.html">Electronic Store<span>Your stores. Your place.</span></a></h1>
+				<h1><a  th:href="@{/home}">Phong Vu Data Crawling<span>Your stores. Your place.</span></a></h1>
 			</div>
 			<div class="search">
 				<input class="search_box" type="checkbox" id="search_box">
 				<label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
 				<div class="search_form">
-					<form action="#" method="post">
+					<form action="{/home}" method="post">
 						<input type="text" name="Search" placeholder="Search...">
 						<input type="submit" value="Send">
 					</form>
 				</div>
 			</div>
-			<div class="cart cart box_1"> 
-				<form action="#" method="post" class="last"> 
-					<input type="hidden" name="cmd" value="_cart" />
-					<input type="hidden" name="display" value="1" />
-					<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-				</form>   
-			</div>  
 		</div>
 	</div>
 	<!-- //header -->
@@ -88,7 +81,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div> 
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav">
-						<li><a href="index.html" class="act">Home</a></li>	
+						<li><a th:href="@{/home}" class="act">Home</a></li>	
 						<!-- Mega Menu -->
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm <b class="caret"></b></a>
@@ -154,21 +147,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="agile_ecommerce_tabs">
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<img th:attr="src=@{${lsMobile[0].getProductImages().get(8)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsMobile[0].productName}"></a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=Mobile,productId=${lsMobile[0].productId})}" th:text="${lsMobile[0].productName}"></a></h5>
 									<div class="simpleCart_shelfItem">
 										<p><i class="item_price" th:text="${lsMobile[0].productPrice}"></i></p>
 									</div>
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
-									<img th:attr="src=@{${lsMobile[1].getProductImages().get(0)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsMobile[1].productName}"></a></h5>
+									<img th:attr="src=@{${lsMobile[3].getProductImages().get(0)}}" style="width: 196px; height: 223px" alt=" "  />
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=Mobile,productId=${lsMobile[3].productId})}" th:text="${lsMobile[1].productName}"></a></h5>
 									<div class="simpleCart_shelfItem">
-										<p> <i class="item_price"  th:text="${lsMobile[1].productPrice}"></i></p>
+										<p> <i class="item_price"  th:text="${lsMobile[3].productPrice}"></i></p>
 									</div>
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<img th:attr="src=@{${lsMobile[2].getProductImages().get(1)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsMobile[2].productName}"></a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=Mobile,productId=${lsMobile[2].productId})}" th:text="${lsMobile[2].productName}"></a></h5>
 									<div class="simpleCart_shelfItem">
 										<p> <i class="item_price" th:text="${lsMobile[2].productPrice}"></i></p>
 									</div>
@@ -180,7 +173,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="agile_ecommerce_tabs">
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<img th:attr="src=@{${lsAudio[0].getProductImages().get(1)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsAudio[1].productName}"></a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=Audio,productId=${lsAudio[1].productId})}" th:text="${lsAudio[1].productName}"></a></h5>
 										<p> <i class="item_price" th:text="${lsAudio[1].productPrice}"></i></p>
 									<div class="simpleCart_shelfItem">
 								
@@ -188,7 +181,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<img th:attr="src=@{${lsAudio[3].getProductImages().get(0)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsAudio[3].productName}"></a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=Audio,productId=${lsAudio[3].productId})}" th:text="${lsAudio[3].productName}"></a></h5>
 									<div class="simpleCart_shelfItem">
 										<p> <i class="item_price"  th:text="${lsAudio[3].productPrice}"></i></p>
 										
@@ -196,7 +189,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<img th:attr="src=@{${lsAudio[4].getProductImages().get(0)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsAudio[4].productName}"></a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=Audio,productId=${lsAudio[4].productId})}" th:text="${lsAudio[4].productName}"></a></h5>
 									<div class="simpleCart_shelfItem">
 										<p> <i class="item_price"  th:text="${lsAudio[4].productPrice}"></i></p>
 										
@@ -209,7 +202,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="agile_ecommerce_tabs">
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<img th:attr="src=@{${lsLapTop[0].getProductImages().get(0)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsLapTop[0].productName}"></a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=Laptop,productId=${lsLapTop[0].productId})}" th:text="${lsLapTop[0].productName}"></a></h5>
 									<div class="simpleCart_shelfItem">
 										<p> <i class="item_price" th:text="${lsLapTop[0].productPrice}"></i></p>
 										
@@ -217,7 +210,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<img th:attr="src=@{${lsLapTop[1].getProductImages().get(2)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsLapTop[1].productName}"></a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=Laptop,productId=${lsLapTop[1].productId})}" th:text="${lsLapTop[1].productName}"></a></h5>
 									<div class="simpleCart_shelfItem">
 										<p> <i class="item_price" th:text="${lsLapTop[1].productPrice}"></i></p>
 										
@@ -225,7 +218,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<img th:attr="src=@{${lsLapTop[2].getProductImages().get(0)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsLapTop[2].productName}"></a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=Laptop,productId=${lsLapTop[2].productId})}" th:text="${lsLapTop[2].productName}"></a></h5>
 									<div class="simpleCart_shelfItem">
 										<p> <i class="item_price" th:text="${lsLapTop[2].productPrice}"></i></p>
 										
@@ -238,21 +231,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="agile_ecommerce_tabs">
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<img th:attr="src=@{${lsVP[0].getProductImages().get(0)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsVP[0].productName}"></a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=VP,productId=${lsVP[0].productId})}" th:text="${lsVP[0].productName}"></a></h5>
 									<div class="simpleCart_shelfItem">
 										<p><i class="item_price" th:text="${lsVP[0].productPrice}"></i></p>
 									</div>
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<img th:attr="src=@{${lsVP[1].getProductImages().get(0)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsVP[1].productName}"></a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=VP,productId=${lsVP[1].productId})}" th:text="${lsVP[1].productName}"></a></h5>
 									<div class="simpleCart_shelfItem">
 										<p><i class="item_price" th:text="${lsVP[1].productPrice}"></i></p>
 									</div>
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<img th:attr="src=@{${lsVP[2].getProductImages().get(0)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsVP[2].productName}"></a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=VP,productId=${lsVP[2].productId})}" th:text="${lsVP[2].productName}"></a></h5>
 									<div class="simpleCart_shelfItem">
 										<p><i class="item_price" th:text="${lsVP[2].productPrice}"></i></p>
 									</div>
@@ -264,7 +257,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="agile_ecommerce_tabs">
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<img th:attr="src=@{${lsKey[0].getProductImages().get(0)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsKey[0].productName}">Grinder</a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=Key,productId=${lsKey[0].productId})}" th:text="${lsKey[0].productName}">Grinder</a></h5>
 									<div class="simpleCart_shelfItem">
 										<p><i class="item_price" th:text="${lsKey[0].productPrice}"></i></p>
 										
@@ -272,7 +265,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
 										<img th:attr="src=@{${lsKey[1].getProductImages().get(0)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsKey[1].productName}">Grinder</a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=Key,productId=${lsKey[1].productId})}" th:text="${lsKey[1].productName}">Grinder</a></h5>
 									<div class="simpleCart_shelfItem">
 										<p><i class="item_price" th:text="${lsKey[1].productPrice}"></i></p>
 										
@@ -280,7 +273,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<img th:attr="src=@{${lsKey[2].getProductImages().get(0)}}" style="width: 196px; height: 223px" alt=" "  />
-									<h5><a href="single.html" th:text="${lsKey[2].productName}">Grinder</a></h5>
+									<h5><a th:href="@{/home/{producCategory}/{productId}(producCategory=Key,productId=${lsKey[2].productId})}" th:text="${lsKey[2].productName}">Grinder</a></h5>
 									<div class="simpleCart_shelfItem">
 										<p><i class="item_price" th:text="${lsKey[2].productPrice}"></i></p>
 										
@@ -384,132 +377,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!-- //special-deals -->
-	<!-- new-products -->
-	<div class="new-products">
-		<div class="container">
-			<h3>New Products</h3>
-			<div class="agileinfo_new_products_grids">
-				<div class="col-md-3 agileinfo_new_products_grid">
-					<div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
-						<div class="hs-wrapper hs-wrapper1">
-							<img src="images/25.jpg" alt=" " class="img-responsive" />
-							<img src="images/23.jpg" alt=" " class="img-responsive" />
-							<img src="images/24.jpg" alt=" " class="img-responsive" />
-							<img src="images/22.jpg" alt=" " class="img-responsive" />
-							<img src="images/26.jpg" alt=" " class="img-responsive" /> 
-							<div class="w3_hs_bottom w3_hs_bottom_sub">
-								<ul>
-									<li>
-										<a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<h5><a href="single.html">Laptops</a></h5>
-						<div class="simpleCart_shelfItem">
-							<p><span>$520</span> <i class="item_price">$500</i></p>
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
-								<input type="hidden" name="amount" value="500.00">   
-								<button type="submit" class="w3ls-cart">Add to cart</button>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 agileinfo_new_products_grid">
-					<div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
-						<div class="hs-wrapper hs-wrapper1">
-							<img src="images/27.jpg" alt=" " class="img-responsive" />
-							<img src="images/28.jpg" alt=" " class="img-responsive" />
-							<img src="images/29.jpg" alt=" " class="img-responsive" />
-							<img src="images/30.jpg" alt=" " class="img-responsive" />
-							<img src="images/31.jpg" alt=" " class="img-responsive" /> 
-							<div class="w3_hs_bottom w3_hs_bottom_sub">
-								<ul>
-									<li>
-										<a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<h5><a href="single.html">Black Phone</a></h5>
-						<div class="simpleCart_shelfItem">
-							<p><span>$380</span> <i class="item_price">$370</i></p>
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Black Phone"> 
-								<input type="hidden" name="amount" value="370.00">   
-								<button type="submit" class="w3ls-cart">Add to cart</button>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 agileinfo_new_products_grid">
-					<div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
-						<div class="hs-wrapper hs-wrapper1">
-							<img src="images/34.jpg" alt=" " class="img-responsive" />
-							<img src="images/33.jpg" alt=" " class="img-responsive" />
-							<img src="images/32.jpg" alt=" " class="img-responsive" />
-							<img src="images/35.jpg" alt=" " class="img-responsive" />
-							<img src="images/36.jpg" alt=" " class="img-responsive" /> 
-							<div class="w3_hs_bottom w3_hs_bottom_sub">
-								<ul>
-									<li>
-										<a href="#" data-toggle="modal" data-target="#myModal5"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<h5><a href="single.html">Kids Toy</a></h5>
-						<div class="simpleCart_shelfItem">
-							<p><span>$150</span> <i class="item_price">$100</i></p>
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Kids Toy"> 
-								<input type="hidden" name="amount" value="100.00">   
-								<button type="submit" class="w3ls-cart">Add to cart</button>
-							</form>
-						</div>  
-					</div>
-				</div>
-				<div class="col-md-3 agileinfo_new_products_grid">
-					<div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
-						<div class="hs-wrapper hs-wrapper1">
-							<img src="images/37.jpg" alt=" " class="img-responsive" />
-							<img src="images/38.jpg" alt=" " class="img-responsive" />
-							<img src="images/39.jpg" alt=" " class="img-responsive" />
-							<img src="images/40.jpg" alt=" " class="img-responsive" />
-							<img src="images/41.jpg" alt=" " class="img-responsive" /> 
-							<div class="w3_hs_bottom w3_hs_bottom_sub">
-								<ul>
-									<li>
-										<a href="#" data-toggle="modal" data-target="#myModal6"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<h5><a href="single.html">Induction Stove</a></h5>
-						<div class="simpleCart_shelfItem">
-							<p><span>$280</span> <i class="item_price">$250</i></p>
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Induction Stove"> 
-								<input type="hidden" name="amount" value="250.00">   
-								<button type="submit" class="w3ls-cart">Add to cart</button>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //new-products -->
 	<!-- top-brands -->
 	<div class="top-brands">
 		<div class="container">
@@ -589,9 +456,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h3>Contact</h3>
 					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
 					<ul class="address">
-						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
-						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Nhóm 20</li>
+						<li><p style="font-weight: bold; margin-left: 35px;">Võ Tài Nhân : 13520571</p></li>
+						<li><p style="font-weight: bold;margin-left: 35px;">Trần Huy Thịnh : 13520830</p></li>
+						<li><p style="font-weight: bold;margin-left: 35px;">Trần Văn Phát : 13520571</p></li>
 					</ul>
 				</div>
 				<div class="col-md-3 w3_footer_grid">

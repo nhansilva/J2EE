@@ -18,13 +18,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script th:inline="javascript" type="application/x-javascript">
 	
 	
+	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 	function hideURLbar(){ window.scrollTo(0,1); } 
+
+
 
 
 </script>
 <!-- //for-mobile-apps -->
 <!-- Custom Theme files -->
+<link th:href="@{/css/flexslider.css}" rel="stylesheet" type="text/css"
+	media="screen" />
 <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css"
 	media="all" />
 <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"
@@ -59,6 +65,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		});
 	});
 </script>
+
+<style>
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 5px;
+}
+
+th {
+	text-align: left;
+	width: 300px;
+}
+</style>
+
 <!-- //end-smooth-scrolling -->
 </head>
 <body>
@@ -167,10 +190,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
 			</div>
 			<div class="w3l_logo">
-				<h1>
-					<a href="index.html">Electronic Store<span>Your stores.
-							Your place.</span></a>
-				</h1>
+				<h1><a  th:href="@{/home}">Phong Vu Data Crawling<span>Your stores. Your place.</span></a></h1>
 			</div>
 			<div class="search">
 				<input class="search_box" type="checkbox" id="search_box"> <label
@@ -183,15 +203,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</form>
 				</div>
 			</div>
-			<div class="cart cart box_1">
-				<form action="#" method="post" class="last">
-					<input type="hidden" name="cmd" value="_cart" /> <input
-						type="hidden" name="display" value="1" />
-					<button class="w3view-cart" type="submit" name="submit" value="">
-						<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-					</button>
-				</form>
-			</div>
+			
 		</div>
 	</div>
 	<!-- //header -->
@@ -201,68 +213,50 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<nav class="navbar navbar-default">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header nav_2">
-					<button type="button"
-						class="navbar-toggle collapsed navbar-toggle1"
-						data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
+					<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
 					</button>
-				</div>
+				</div> 
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav">
-						<li><a href="index.html">Home</a></li>
+						<li><a th:href="@{/home}" class="act">Home</a></li>	
 						<!-- Mega Menu -->
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">Products <b class="caret"></b></a>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm <b class="caret"></b></a>
 							<ul class="dropdown-menu multi-column columns-3">
 								<div class="row">
 									<div class="col-sm-3">
 										<ul class="multi-column-dropdown">
 											<h6>Mobiles</h6>
-											<li><a href="products.html">Mobile Phones</a></li>
-											<li><a href="products.html">Mp3 Players <span>New</span></a></li>
-											<li><a href="products.html">Popular Models</a></li>
-											<li><a href="products.html">All Tablets<span>New</span></a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=LapTop)}">LapTop</a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=Mobile)}">Điện Thoại Và Tablet</a></li> 
 										</ul>
 									</div>
 									<div class="col-sm-3">
 										<ul class="multi-column-dropdown">
-											<h6>Accessories</h6>
-											<li><a href="products1.html">Laptop</a></li>
-											<li><a href="products1.html">Desktop</a></li>
-											<li><a href="products1.html">Wearables <span>New</span></a></li>
-											<li><a href="products1.html"><i>Summer Store</i></a></li>
+											<h6>Phụ Kiên Và Thiết Bị Số</h6>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=MHMT)}">Màn Hình Máy Tính</a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=Key)}">Chuột Bàn Phím Pad</a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=PhuKien}">Phụ Kiện </a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=Audio)}">Thiết Bị Âm Thanh</a></li>
 										</ul>
 									</div>
 									<div class="col-sm-2">
 										<ul class="multi-column-dropdown">
 											<h6>Home</h6>
-											<li><a href="products2.html">Tv</a></li>
-											<li><a href="products2.html">Camera</a></li>
-											<li><a href="products2.html">AC</a></li>
-											<li><a href="products2.html">Grinders</a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=Security)}">Thiết Bị An Ninh</a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=Computer)}">Máy Tính Đồng Bộ</a></li>
+											<li><a th:href="@{/home/{productCatelogy}(productCatelogy=VP)}">Thiết Bị Văn Phòng</a></li>
 										</ul>
-									</div>
-									<div class="col-sm-4">
-										<div class="w3ls_products_pos">
-											<h4>
-												30%<i>Off/-</i>
-											</h4>
-											<img src="images/1.jpg" alt=" " class="img-responsive" />
-										</div>
 									</div>
 									<div class="clearfix"></div>
 								</div>
-							</ul></li>
+							</ul>
+						</li>
 						<li><a href="about.html">About Us</a></li>
-						<li class="w3pages"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">Pages <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="icons.html">Web Icons</a></li>
-								<li><a href="codes.html">Short Codes</a></li>
-							</ul></li>
 						<li><a href="mail.html">Mail Us</a></li>
 					</ul>
 				</div>
@@ -281,7 +275,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="breadcrumb_dress">
 		<div class="container">
 			<ul>
-				<li><a href="index.html"><span
+				<li><a th:href="@{/home}"><span
 						class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
 				<li>Single Page</li>
 			</ul>
@@ -293,18 +287,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="col-md-4 single-left">
 				<div class="flexslider">
-					<ul class="slides" th:each="imgUri : ${pro.getProductImages()}">
-						<li th:attr="data-thumb=${imgUri}">
+					<ul class="slides">
+						<li th:attr="data-thumb=@{${pro.getProductImages().get(0)}}">
 							<div class="thumb-image">
-								<img th:attr="src=@{${imgUri}}" data-imagezoom="true" class="img-responsive" alt="" style="background-repeat: no-repeat;">
+								<img th:attr="src=@{${pro.getProductImages().get(0)}}"
+									data-imagezoom="true" class="img-responsive" alt=""
+									style="background-repeat: no-repeat;">
 							</div>
 						</li>
 					</ul>
 				</div>
 				<!-- flexslider -->
 				<script defer src="/js/jquery.flexslider.js"></script>
-				<link rel="stylesheet" th:href="@{/css/flexslider.css}" type="text/css"
-					media="screen" />
+
 				<script th:inline="javascript">
 					// Can also be used with $(document).ready()
 					$(window).load(function() {
@@ -356,624 +351,503 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					style="display: block; width: 100%; margin: 0px;">
 					<ul>
 						<li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Product
-								Information</span></li>
+								Specifications</span></li>
 						<li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Reviews</span></li>
 					</ul>
 					<div class="tab-1 resp-tab-content additional_info_grid"
 						aria-labelledby="tab_item-0">
-						<h3>The Best 3GB RAM Mobile Phone</h3>
-						<p>Duis aute irure dolor in reprehenderit in voluptate velit
-							esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-							occaecat cupidatat non proident. Nemo enim ipsam voluptatem quia
-							voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-							magni dolores eos qui ratione voluptatem sequi nesciunt.Ut enim
-							ad minima veniam, quis nostrum exercitationem ullam corporis
-							suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-							Quis autem vel eum iure reprehenderit qui in ea voluptate velit
-							esse quam nihil molestiae consequatur, vel illum qui dolorem eum
-							fugiat quo voluptas nulla pariatur.</p>
-					</div>
+						<h3 th:text="${pro.productName}"></h3>
+						
+						<table style="width: 100%" th:each="proSpec : ${pro.getProductSpecifications()}">
+							<tr>
+								<th th:text = "${proSpec.key}"></th>
+								<td th:text = "${proSpec.value}"></td>
+							</tr>						
+						</table>
 
-					<div class="tab-2 resp-tab-content additional_info_grid"
-						aria-labelledby="tab_item-1">
-						<h4>(2) Reviews</h4>
-						<div class="additional_info_sub_grids">
-							<div class="col-xs-2 additional_info_sub_grid_left">
-								<img src="images/t1.png" alt=" " class="img-responsive" />
-							</div>
-							<div class="col-xs-10 additional_info_sub_grid_right">
-								<div class="additional_info_sub_grid_rightl">
-									<a href="single.html">Laura</a>
-									<h5>Oct 06, 2016.</h5>
-									<p>Quis autem vel eum iure reprehenderit qui in ea
-										voluptate velit esse quam nihil molestiae consequatur, vel
-										illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+
+						<div class="tab-2 resp-tab-content additional_info_grid"
+							aria-labelledby="tab_item-1">
+							<h4>(2) Reviews</h4>
+							<div class="additional_info_sub_grids">
+								<div class="col-xs-2 additional_info_sub_grid_left">
+									<img src="images/t1.png" alt=" " class="img-responsive" />
 								</div>
-								<div class="additional_info_sub_grid_rightr">
-									<div class="rating">
-										<div class="rating-left">
-											<img src="images/star-.png" alt=" " class="img-responsive">
-										</div>
-										<div class="rating-left">
-											<img src="images/star-.png" alt=" " class="img-responsive">
-										</div>
-										<div class="rating-left">
-											<img src="images/star-.png" alt=" " class="img-responsive">
-										</div>
-										<div class="rating-left">
-											<img src="images/star.png" alt=" " class="img-responsive">
-										</div>
-										<div class="rating-left">
-											<img src="images/star.png" alt=" " class="img-responsive">
-										</div>
-										<div class="clearfix"></div>
+								<div class="col-xs-10 additional_info_sub_grid_right">
+									<div class="additional_info_sub_grid_rightl">
+										<a href="single.html">Laura</a>
+										<h5>Oct 06, 2016.</h5>
+										<p>Quis autem vel eum iure reprehenderit qui in ea
+											voluptate velit esse quam nihil molestiae consequatur, vel
+											illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
 									</div>
+									<div class="additional_info_sub_grid_rightr">
+										<div class="rating">
+											<div class="rating-left">
+												<img src="images/star-.png" alt=" " class="img-responsive">
+											</div>
+											<div class="rating-left">
+												<img src="images/star-.png" alt=" " class="img-responsive">
+											</div>
+											<div class="rating-left">
+												<img src="images/star-.png" alt=" " class="img-responsive">
+											</div>
+											<div class="rating-left">
+												<img src="images/star.png" alt=" " class="img-responsive">
+											</div>
+											<div class="rating-left">
+												<img src="images/star.png" alt=" " class="img-responsive">
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
 								</div>
 								<div class="clearfix"></div>
 							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="additional_info_sub_grids">
-							<div class="col-xs-2 additional_info_sub_grid_left">
-								<img src="images/t2.png" alt=" " class="img-responsive" />
-							</div>
-							<div class="col-xs-10 additional_info_sub_grid_right">
-								<div class="additional_info_sub_grid_rightl">
-									<a href="single.html">Michael</a>
-									<h5>Oct 04, 2016.</h5>
-									<p>Quis autem vel eum iure reprehenderit qui in ea
-										voluptate velit esse quam nihil molestiae consequatur, vel
-										illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+							<div class="additional_info_sub_grids">
+								<div class="col-xs-2 additional_info_sub_grid_left">
+									<img src="images/t2.png" alt=" " class="img-responsive" />
 								</div>
-								<div class="additional_info_sub_grid_rightr">
-									<div class="rating">
-										<div class="rating-left">
-											<img src="images/star-.png" alt=" " class="img-responsive">
-										</div>
-										<div class="rating-left">
-											<img src="images/star-.png" alt=" " class="img-responsive">
-										</div>
-										<div class="rating-left">
-											<img src="images/star.png" alt=" " class="img-responsive">
-										</div>
-										<div class="rating-left">
-											<img src="images/star.png" alt=" " class="img-responsive">
-										</div>
-										<div class="rating-left">
-											<img src="images/star.png" alt=" " class="img-responsive">
-										</div>
-										<div class="clearfix"></div>
+								<div class="col-xs-10 additional_info_sub_grid_right">
+									<div class="additional_info_sub_grid_rightl">
+										<a href="single.html">Michael</a>
+										<h5>Oct 04, 2016.</h5>
+										<p>Quis autem vel eum iure reprehenderit qui in ea
+											voluptate velit esse quam nihil molestiae consequatur, vel
+											illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
 									</div>
+									<div class="additional_info_sub_grid_rightr">
+										<div class="rating">
+											<div class="rating-left">
+												<img src="images/star-.png" alt=" " class="img-responsive">
+											</div>
+											<div class="rating-left">
+												<img src="images/star-.png" alt=" " class="img-responsive">
+											</div>
+											<div class="rating-left">
+												<img src="images/star.png" alt=" " class="img-responsive">
+											</div>
+											<div class="rating-left">
+												<img src="images/star.png" alt=" " class="img-responsive">
+											</div>
+											<div class="rating-left">
+												<img src="images/star.png" alt=" " class="img-responsive">
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
 								</div>
 								<div class="clearfix"></div>
 							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="review_grids">
-							<h5>Add A Review</h5>
-							<form action="#" method="post">
-								<input type="text" name="Name" value="Name"
-									onfocus="this.value = '';"
-									onblur="if (this.value == '') {this.value = 'Name';}"
-									required=""> <input type="email" name="Email"
-									placeholder="Email" required=""> <input type="text"
-									name="Telephone" value="Telephone" onfocus="this.value = '';"
-									onblur="if (this.value == '') {this.value = 'Telephone';}"
-									required="">
-								<textarea name="Review" onfocus="this.value = '';"
-									onblur="if (this.value == '') {this.value = 'Add Your Review';}"
-									required="">Add Your Review</textarea>
-								<input type="submit" value="Submit">
-							</form>
+							<div class="review_grids">
+								<h5>Add A Review</h5>
+								<form action="#" method="post">
+									<input type="text" name="Name" value="Name"
+										onfocus="this.value = '';"
+										onblur="if (this.value == '') {this.value = 'Name';}"
+										required=""> <input type="email" name="Email"
+										placeholder="Email" required=""> <input type="text"
+										name="Telephone" value="Telephone" onfocus="this.value = '';"
+										onblur="if (this.value == '') {this.value = 'Telephone';}"
+										required="">
+									<textarea name="Review" onfocus="this.value = '';"
+										onblur="if (this.value == '') {this.value = 'Add Your Review';}"
+										required="">Add Your Review</textarea>
+									<input type="submit" value="Submit">
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<script src="/js/easyResponsiveTabs.js" type="text/javascript"></script>
-			<script type="text/javascript" th:inline="javascript">
-				$(document).ready(function() {
-					$('#horizontalTab1').easyResponsiveTabs({
-						type : 'default', //Types: default, vertical, accordion           
-						width : 'auto', //auto or any width like 600px
-						fit : true
-					// 100% fit in a container
+				<script src="/js/easyResponsiveTabs.js" type="text/javascript"></script>
+				<script type="text/javascript" th:inline="javascript">
+					$(document).ready(function() {
+						$('#horizontalTab1').easyResponsiveTabs({
+							type : 'default', //Types: default, vertical, accordion           
+							width : 'auto', //auto or any width like 600px
+							fit : true
+						// 100% fit in a container
+						});
 					});
-				});
-			</script>
+				</script>
+			</div>
 		</div>
-	</div>
-	<!-- Related Products -->
-	<div class="w3l_related_products">
-		<div class="container">
-			<h3>Related Products</h3>
-			<ul id="flexiselDemo2">
-				<li>
-					<div class="w3l_related_products_grid">
-						<div class="agile_ecommerce_tab_left mobiles_grid">
-							<div class="hs-wrapper hs-wrapper3">
-								<img src="images/34.jpg" alt=" " class="img-responsive" /> <img
-									src="images/35.jpg" alt=" " class="img-responsive" /> <img
-									src="images/27.jpg" alt=" " class="img-responsive" /> <img
-									src="images/28.jpg" alt=" " class="img-responsive" /> <img
-									src="images/37.jpg" alt=" " class="img-responsive" />
-								<div class="w3_hs_bottom">
-									<div class="flex_ecommerce">
-										<a href="#" data-toggle="modal" data-target="#myModal6"><span
-											class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+		<!-- Related Products -->
+		<div class="w3l_related_products">
+			<div class="container">
+				<h3>Related Products</h3>
+				<ul id="flexiselDemo2">
+					<li th:each="relatedPro : ${relatedProduct}">
+						<div class="w3l_related_products_grid">
+							<div class="agile_ecommerce_tab_left mobiles_grid">
+								<div class="hs-wrapper hs-wrapper3">
+									<img th:attr="src=@{${relatedPro.getProductImages().get(0)}}" alt=" " class="img-responsive" /> 
+									<div class="w3_hs_bottom">
+										<div class="flex_ecommerce">
+											<a href="#" data-toggle="modal" data-target="#myModal6"><span
+												class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+										</div>
 									</div>
 								</div>
-							</div>
-							<h5>
-								<a href="single.html">Kid's Toy</a>
-							</h5>
-							<div class="simpleCart_shelfItem">
-								<p class="flexisel_ecommerce_cart">
-									<span>$150</span> <i class="item_price">$100</i>
-								</p>
-								<form action="#" method="post">
-									<input type="hidden" name="cmd" value="_cart"> <input
-										type="hidden" name="add" value="1"> <input
-										type="hidden" name="w3ls_item" value="Kid's Toy"> <input
-										type="hidden" name="amount" value="100.00">
-									<button type="submit" class="w3ls-cart">Add to cart</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="w3l_related_products_grid">
-						<div class="agile_ecommerce_tab_left mobiles_grid">
-							<div class="hs-wrapper hs-wrapper3">
-								<img src="images/36.jpg" alt=" " class="img-responsive" /> <img
-									src="images/32.jpg" alt=" " class="img-responsive" /> <img
-									src="images/33.jpg" alt=" " class="img-responsive" /> <img
-									src="images/32.jpg" alt=" " class="img-responsive" /> <img
-									src="images/36.jpg" alt=" " class="img-responsive" />
-								<div class="w3_hs_bottom">
-									<div class="flex_ecommerce">
-										<a href="#" data-toggle="modal" data-target="#myModal5"><span
-											class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-									</div>
+								<h5>
+									<a th:href="@{/home/{producCategory}/{productId}(producCategory=${cataRelated},productId=${relatedPro.productId})}" th:text="${relatedPro.productName}"></a>
+									
+								</h5>
+								<div class="simpleCart_shelfItem">
+									<p class="flexisel_ecommerce_cart">
+										<i class="item_price" th:text="${relatedPro.productPrice}"></i>
+									</p>
+									
 								</div>
 							</div>
-							<h5>
-								<a href="single.html">Vacuum Cleaner</a>
-							</h5>
-							<div class="simpleCart_shelfItem">
-								<p class="flexisel_ecommerce_cart">
-									<span>$960</span> <i class="item_price">$920</i>
-								</p>
-								<form action="#" method="post">
-									<input type="hidden" name="cmd" value="_cart" /> <input
-										type="hidden" name="add" value="1" /> <input type="hidden"
-										name="w3ls_item" value="Vacuum Cleaner" /> <input
-										type="hidden" name="amount" value="920.00" />
-									<button type="submit" class="w3ls-cart">Add to cart</button>
-								</form>
-							</div>
 						</div>
-					</div>
-				</li>
-				<li>
-					<div class="w3l_related_products_grid">
-						<div class="agile_ecommerce_tab_left mobiles_grid">
-							<div class="hs-wrapper hs-wrapper3">
-								<img src="images/38.jpg" alt=" " class="img-responsive" /> <img
-									src="images/37.jpg" alt=" " class="img-responsive" /> <img
-									src="images/27.jpg" alt=" " class="img-responsive" /> <img
-									src="images/28.jpg" alt=" " class="img-responsive" /> <img
-									src="images/37.jpg" alt=" " class="img-responsive" />
-								<div class="w3_hs_bottom">
-									<div class="flex_ecommerce">
-										<a href="#" data-toggle="modal" data-target="#myModal3"><span
-											class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-									</div>
-								</div>
-							</div>
-							<h5>
-								<a href="single.html">Microwave Oven</a>
-							</h5>
-							<div class="simpleCart_shelfItem">
-								<p class="flexisel_ecommerce_cart">
-									<span>$650</span> <i class="item_price">$645</i>
-								</p>
-								<form action="#" method="post">
-									<input type="hidden" name="cmd" value="_cart" /> <input
-										type="hidden" name="add" value="1" /> <input type="hidden"
-										name="w3ls_item" value="Microwave Oven" /> <input
-										type="hidden" name="amount" value="645.00" />
-									<button type="submit" class="w3ls-cart">Add to cart</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="w3l_related_products_grid">
-						<div class="agile_ecommerce_tab_left mobiles_grid">
-							<div class="hs-wrapper hs-wrapper3">
-								<img src="images/p3.jpg" alt=" " class="img-responsive" /> <img
-									src="images/p5.jpg" alt=" " class="img-responsive" /> <img
-									src="images/p4.jpg" alt=" " class="img-responsive" /> <img
-									src="images/p2.jpg" alt=" " class="img-responsive" /> <img
-									src="images/p1.jpg" alt=" " class="img-responsive" />
-								<div class="w3_hs_bottom">
-									<div class="flex_ecommerce">
-										<a href="#" data-toggle="modal" data-target="#myModal4"><span
-											class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-									</div>
-								</div>
-							</div>
-							<h5>
-								<a href="single.html">Music MP3 Player</a>
-							</h5>
-							<div class="simpleCart_shelfItem">
-								<p>
-									<span>$60</span> <i class="item_price">$58</i>
-								</p>
-								<form action="#" method="post">
-									<input type="hidden" name="cmd" value="_cart" /> <input
-										type="hidden" name="add" value="1" /> <input type="hidden"
-										name="w3ls_item" value="Ultra MP3 Player" /> <input
-										type="hidden" name="amount" value="58.00" />
-									<button type="submit" class="w3ls-cart">Add to cart</button>
-								</form>
-							</div>
-							<div class="mobiles_grid_pos">
-								<h6>New</h6>
-							</div>
-						</div>
-					</div>
-				</li>
-			</ul>
+					</li>
+				</ul>
 
-			<script type="text/javascript" th:inline="javascript">
-				$(window).load(function() {
-					$("#flexiselDemo2").flexisel({
-						visibleItems : 4,
-						animationSpeed : 1000,
-						autoPlay : true,
-						autoPlaySpeed : 3000,
-						pauseOnHover : true,
-						enableResponsiveBreakpoints : true,
-						responsiveBreakpoints : {
-							portrait : {
-								changePoint : 480,
-								visibleItems : 1
-							},
-							landscape : {
-								changePoint : 640,
-								visibleItems : 2
-							},
-							tablet : {
-								changePoint : 768,
-								visibleItems : 3
+				<script type="text/javascript" th:inline="javascript">
+					$(window).load(function() {
+						$("#flexiselDemo2").flexisel({
+							visibleItems : 4,
+							animationSpeed : 1000,
+							autoPlay : true,
+							autoPlaySpeed : 3000,
+							pauseOnHover : true,
+							enableResponsiveBreakpoints : true,
+							responsiveBreakpoints : {
+								portrait : {
+									changePoint : 480,
+									visibleItems : 1
+								},
+								landscape : {
+									changePoint : 640,
+									visibleItems : 2
+								},
+								tablet : {
+									changePoint : 768,
+									visibleItems : 3
+								}
 							}
-						}
-					});
+						});
 
-				});
-			</script>
-			<script type="text/javascript" src="/js/jquery.flexisel.js"></script>
+					});
+				</script>
+				<script type="text/javascript" src="/js/jquery.flexisel.js"></script>
+			</div>
 		</div>
-	</div>
-	<!-- //Related Products -->
-	<div class="modal video-modal fade" id="myModal6" tabindex="-1"
-		role="dialog" aria-labelledby="myModal6">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<section>
-					<div class="modal-body">
-						<div class="col-md-5 modal_body_left">
-							<img src="images/34.jpg" alt=" " class="img-responsive" />
-						</div>
-						<div class="col-md-7 modal_body_right">
-							<h4>Musical Kids Toy</h4>
-							<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
-								laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure
-								dolor in reprehenderit in voluptate velit esse cillum dolore eu
-								fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-								proident, sunt in culpa qui officia deserunt mollit anim id est
-								laborum.</p>
-							<div class="rating">
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive" />
-								</div>
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive" />
-								</div>
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive" />
-								</div>
-								<div class="rating-left">
-									<img src="images/star.png" alt=" " class="img-responsive" />
-								</div>
-								<div class="rating-left">
-									<img src="images/star.png" alt=" " class="img-responsive" />
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="modal_body_right_cart simpleCart_shelfItem">
-								<p>
-									<span>$150</span> <i class="item_price">$100</i>
-								</p>
-								<form action="#" method="post">
-									<input type="hidden" name="cmd" value="_cart"> <input
-										type="hidden" name="add" value="1"> <input
-										type="hidden" name="w3ls_item" value="Kids Toy"> <input
-										type="hidden" name="amount" value="100.00">
-									<button type="submit" class="w3ls-cart">Add to cart</button>
-								</form>
-							</div>
-							<h5>Color</h5>
-							<div class="color-quality">
-								<ul>
-									<li><a href="#"><span></span></a></li>
-									<li><a href="#" class="brown"><span></span></a></li>
-									<li><a href="#" class="purple"><span></span></a></li>
-									<li><a href="#" class="gray"><span></span></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="clearfix"></div>
+		<!-- //Related Products -->
+		<div class="modal video-modal fade" id="myModal6" tabindex="-1"
+			role="dialog" aria-labelledby="myModal6">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
 					</div>
-				</section>
-			</div>
-		</div>
-	</div>
-	<div class="modal video-modal fade" id="myModal5" tabindex="-1"
-		role="dialog" aria-labelledby="myModal5">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
+					<section>
+						<div class="modal-body">
+							<div class="col-md-5 modal_body_left">
+								<img src="images/34.jpg" alt=" " class="img-responsive" />
+							</div>
+							<div class="col-md-7 modal_body_right">
+								<h4>Musical Kids Toy</h4>
+								<p>Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis
+									aute irure dolor in reprehenderit in voluptate velit esse
+									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+									cupidatat non proident, sunt in culpa qui officia deserunt
+									mollit anim id est laborum.</p>
+								<div class="rating">
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive" />
+									</div>
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive" />
+									</div>
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive" />
+									</div>
+									<div class="rating-left">
+										<img src="images/star.png" alt=" " class="img-responsive" />
+									</div>
+									<div class="rating-left">
+										<img src="images/star.png" alt=" " class="img-responsive" />
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="modal_body_right_cart simpleCart_shelfItem">
+									<p>
+										<span>$150</span> <i class="item_price">$100</i>
+									</p>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart"> <input
+											type="hidden" name="add" value="1"> <input
+											type="hidden" name="w3ls_item" value="Kids Toy"> <input
+											type="hidden" name="amount" value="100.00">
+										<button type="submit" class="w3ls-cart">Add to cart</button>
+									</form>
+								</div>
+								<h5>Color</h5>
+								<div class="color-quality">
+									<ul>
+										<li><a href="#"><span></span></a></li>
+										<li><a href="#" class="brown"><span></span></a></li>
+										<li><a href="#" class="purple"><span></span></a></li>
+										<li><a href="#" class="gray"><span></span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</section>
 				</div>
-				<section>
-					<div class="modal-body">
-						<div class="col-md-5 modal_body_left">
-							<img src="images/36.jpg" alt=" " class="img-responsive">
-						</div>
-						<div class="col-md-7 modal_body_right">
-							<h4>Dry Vacuum Cleaner</h4>
-							<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
-								laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure
-								dolor in reprehenderit in voluptate velit esse cillum dolore eu
-								fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-								proident, sunt in culpa qui officia deserunt mollit anim id est
-								laborum.</p>
-							<div class="rating">
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive">
-								</div>
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive">
-								</div>
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive">
-								</div>
-								<div class="rating-left">
-									<img src="images/star.png" alt=" " class="img-responsive">
-								</div>
-								<div class="rating-left">
-									<img src="images/star.png" alt=" " class="img-responsive">
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="modal_body_right_cart simpleCart_shelfItem">
-								<p>
-									<span>$960</span> <i class="item_price">$920</i>
-								</p>
-								<form action="#" method="post">
-									<input type="hidden" name="cmd" value="_cart"> <input
-										type="hidden" name="add" value="1"> <input
-										type="hidden" name="w3ls_item" value="Vacuum Cleaner">
-									<input type="hidden" name="amount" value="920.00">
-									<button type="submit" class="w3ls-cart">Add to cart</button>
-								</form>
-							</div>
-							<h5>Color</h5>
-							<div class="color-quality">
-								<ul>
-									<li><a href="#"><span></span></a></li>
-									<li><a href="#" class="brown"><span></span></a></li>
-									<li><a href="#" class="purple"><span></span></a></li>
-									<li><a href="#" class="gray"><span></span></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</section>
 			</div>
 		</div>
-	</div>
-	<div class="modal video-modal fade" id="myModal4" tabindex="-1"
-		role="dialog" aria-labelledby="myModal4">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+		<div class="modal video-modal fade" id="myModal5" tabindex="-1"
+			role="dialog" aria-labelledby="myModal5">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<section>
+						<div class="modal-body">
+							<div class="col-md-5 modal_body_left">
+								<img src="images/36.jpg" alt=" " class="img-responsive">
+							</div>
+							<div class="col-md-7 modal_body_right">
+								<h4>Dry Vacuum Cleaner</h4>
+								<p>Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis
+									aute irure dolor in reprehenderit in voluptate velit esse
+									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+									cupidatat non proident, sunt in culpa qui officia deserunt
+									mollit anim id est laborum.</p>
+								<div class="rating">
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive">
+									</div>
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive">
+									</div>
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive">
+									</div>
+									<div class="rating-left">
+										<img src="images/star.png" alt=" " class="img-responsive">
+									</div>
+									<div class="rating-left">
+										<img src="images/star.png" alt=" " class="img-responsive">
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="modal_body_right_cart simpleCart_shelfItem">
+									<p>
+										<span>$960</span> <i class="item_price">$920</i>
+									</p>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart"> <input
+											type="hidden" name="add" value="1"> <input
+											type="hidden" name="w3ls_item" value="Vacuum Cleaner">
+										<input type="hidden" name="amount" value="920.00">
+										<button type="submit" class="w3ls-cart">Add to cart</button>
+									</form>
+								</div>
+								<h5>Color</h5>
+								<div class="color-quality">
+									<ul>
+										<li><a href="#"><span></span></a></li>
+										<li><a href="#" class="brown"><span></span></a></li>
+										<li><a href="#" class="purple"><span></span></a></li>
+										<li><a href="#" class="gray"><span></span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</section>
 				</div>
-				<section>
-					<div class="modal-body">
-						<div class="col-md-5 modal_body_left">
-							<img src="images/p3.jpg" alt=" " class="img-responsive" />
-						</div>
-						<div class="col-md-7 modal_body_right">
-							<h4>Music MP3 Player</h4>
-							<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
-								laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure
-								dolor in reprehenderit in voluptate velit esse cillum dolore eu
-								fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-								proident, sunt in culpa qui officia deserunt mollit anim id est
-								laborum.</p>
-							<div class="rating">
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive" />
-								</div>
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive" />
-								</div>
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive" />
-								</div>
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive" />
-								</div>
-								<div class="rating-left">
-									<img src="images/star.png" alt=" " class="img-responsive" />
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="modal_body_right_cart simpleCart_shelfItem">
-								<p>
-									<span>$60</span> <i class="item_price">$58</i>
-								</p>
-								<form action="#" method="post">
-									<input type="hidden" name="cmd" value="_cart" /> <input
-										type="hidden" name="add" value="1" /> <input type="hidden"
-										name="w3ls_item" value="MP3 Player" /> <input type="hidden"
-										name="amount" value=" $58.00" />
-									<button type="submit" class="w3ls-cart">Add to cart</button>
-								</form>
-							</div>
-							<h5>Color</h5>
-							<div class="color-quality">
-								<ul>
-									<li><a href="#"><span></span></a></li>
-									<li><a href="#" class="brown"><span></span></a></li>
-									<li><a href="#" class="purple"><span></span></a></li>
-									<li><a href="#" class="gray"><span></span></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</section>
 			</div>
 		</div>
-	</div>
-	<div class="modal video-modal fade" id="myModal3" tabindex="-1"
-		role="dialog" aria-labelledby="myModal3">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
+		<div class="modal video-modal fade" id="myModal4" tabindex="-1"
+			role="dialog" aria-labelledby="myModal4">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<section>
+						<div class="modal-body">
+							<div class="col-md-5 modal_body_left">
+								<img src="images/p3.jpg" alt=" " class="img-responsive" />
+							</div>
+							<div class="col-md-7 modal_body_right">
+								<h4>Music MP3 Player</h4>
+								<p>Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis
+									aute irure dolor in reprehenderit in voluptate velit esse
+									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+									cupidatat non proident, sunt in culpa qui officia deserunt
+									mollit anim id est laborum.</p>
+								<div class="rating">
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive" />
+									</div>
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive" />
+									</div>
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive" />
+									</div>
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive" />
+									</div>
+									<div class="rating-left">
+										<img src="images/star.png" alt=" " class="img-responsive" />
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="modal_body_right_cart simpleCart_shelfItem">
+									<p>
+										<span>$60</span> <i class="item_price">$58</i>
+									</p>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart" /> <input
+											type="hidden" name="add" value="1" /> <input type="hidden"
+											name="w3ls_item" value="MP3 Player" /> <input type="hidden"
+											name="amount" value=" $58.00" />
+										<button type="submit" class="w3ls-cart">Add to cart</button>
+									</form>
+								</div>
+								<h5>Color</h5>
+								<div class="color-quality">
+									<ul>
+										<li><a href="#"><span></span></a></li>
+										<li><a href="#" class="brown"><span></span></a></li>
+										<li><a href="#" class="purple"><span></span></a></li>
+										<li><a href="#" class="gray"><span></span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</section>
 				</div>
-				<section>
-					<div class="modal-body">
-						<div class="col-md-5 modal_body_left">
-							<img src="images/38.jpg" alt=" " class="img-responsive">
-						</div>
-						<div class="col-md-7 modal_body_right">
-							<h4>Kitchen &amp; Dining Accessories</h4>
-							<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
-								laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure
-								dolor in reprehenderit in voluptate velit esse cillum dolore eu
-								fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-								proident, sunt in culpa qui officia deserunt mollit anim id est
-								laborum.</p>
-							<div class="rating">
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive">
-								</div>
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive">
-								</div>
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive">
-								</div>
-								<div class="rating-left">
-									<img src="images/star-.png" alt=" " class="img-responsive">
-								</div>
-								<div class="rating-left">
-									<img src="images/star.png" alt=" " class="img-responsive">
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="modal_body_right_cart simpleCart_shelfItem">
-								<p>
-									<span>$650</span> <i class="item_price">$645</i>
-								</p>
-								<form action="#" method="post">
-									<input type="hidden" name="cmd" value="_cart"> <input
-										type="hidden" name="add" value="1"> <input
-										type="hidden" name="w3ls_item" value="Microwave Oven">
-									<input type="hidden" name="amount" value="645.00">
-									<button type="submit" class="w3ls-cart">Add to cart</button>
-								</form>
-							</div>
-							<h5>Color</h5>
-							<div class="color-quality">
-								<ul>
-									<li><a href="#"><span></span></a></li>
-									<li><a href="#" class="brown"><span></span></a></li>
-									<li><a href="#" class="purple"><span></span></a></li>
-									<li><a href="#" class="gray"><span></span></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="modal video-modal fade" id="myModal3" tabindex="-1"
+			role="dialog" aria-labelledby="myModal3">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
 					</div>
-				</section>
+					<section>
+						<div class="modal-body">
+							<div class="col-md-5 modal_body_left">
+								<img src="images/38.jpg" alt=" " class="img-responsive">
+							</div>
+							<div class="col-md-7 modal_body_right">
+								<h4>Kitchen &amp; Dining Accessories</h4>
+								<p>Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis
+									aute irure dolor in reprehenderit in voluptate velit esse
+									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+									cupidatat non proident, sunt in culpa qui officia deserunt
+									mollit anim id est laborum.</p>
+								<div class="rating">
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive">
+									</div>
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive">
+									</div>
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive">
+									</div>
+									<div class="rating-left">
+										<img src="images/star-.png" alt=" " class="img-responsive">
+									</div>
+									<div class="rating-left">
+										<img src="images/star.png" alt=" " class="img-responsive">
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="modal_body_right_cart simpleCart_shelfItem">
+									<p>
+										<span>$650</span> <i class="item_price">$645</i>
+									</p>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart"> <input
+											type="hidden" name="add" value="1"> <input
+											type="hidden" name="w3ls_item" value="Microwave Oven">
+										<input type="hidden" name="amount" value="645.00">
+										<button type="submit" class="w3ls-cart">Add to cart</button>
+									</form>
+								</div>
+								<h5>Color</h5>
+								<div class="color-quality">
+									<ul>
+										<li><a href="#"><span></span></a></li>
+										<li><a href="#" class="brown"><span></span></a></li>
+										<li><a href="#" class="purple"><span></span></a></li>
+										<li><a href="#" class="gray"><span></span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</section>
+				</div>
 			</div>
 		</div>
-	</div>
-	<!-- //single -->
-	<!-- newsletter -->
-	<div class="newsletter">
-		<div class="container">
-			<div class="col-md-6 w3agile_newsletter_left">
-				<h3>Newsletter</h3>
-				<p>Excepteur sint occaecat cupidatat non proident, sunt.</p>
+		<!-- //single -->
+		<!-- newsletter -->
+		<div class="newsletter">
+			<div class="container">
+				<div class="col-md-6 w3agile_newsletter_left">
+					<h3>Newsletter</h3>
+					<p>Excepteur sint occaecat cupidatat non proident, sunt.</p>
+				</div>
+				<div class="col-md-6 w3agile_newsletter_right">
+					<form action="#" method="post">
+						<input type="email" name="Email" placeholder="Email" required="">
+						<input type="submit" value="" />
+					</form>
+				</div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="col-md-6 w3agile_newsletter_right">
-				<form action="#" method="post">
-					<input type="email" name="Email" placeholder="Email" required="">
-					<input type="submit" value="" />
-				</form>
-			</div>
-			<div class="clearfix"></div>
 		</div>
-	</div>
-	<!-- //newsletter -->
-	<!-- footer -->
-	<div class="footer">
-		<div class="container">
+		<!-- //newsletter -->
+		<!-- footer -->
+		<div class="footer">
+			<div class="container">
 			<div class="w3_footer_grids">
 				<div class="col-md-3 w3_footer_grid">
 					<h3>Contact</h3>
-					<p>Duis aute irure dolor in reprehenderit in voluptate velit
-						esse.</p>
+					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
 					<ul class="address">
-						<li><i class="glyphicon glyphicon-map-marker"
-							aria-hidden="true"></i>1234k Avenue, 4th block, <span>New
-								York City.</span></li>
-						<li><i class="glyphicon glyphicon-envelope"
-							aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-						<li><i class="glyphicon glyphicon-earphone"
-							aria-hidden="true"></i>+1234 567 567</li>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Nhóm 20</li>
+						<li><p style="font-weight: bold; margin-left: 35px;">Võ Tài Nhân : 13520571</p></li>
+						<li><p style="font-weight: bold;margin-left: 35px;">Trần Huy Thịnh : 13520830</p></li>
+						<li><p style="font-weight: bold;margin-left: 35px;">Trần Văn Phát : 13520571</p></li>
 					</ul>
 				</div>
 				<div class="col-md-3 w3_footer_grid">
 					<h3>Information</h3>
-					<ul class="info">
+					<ul class="info"> 
 						<li><a href="about.html">About Us</a></li>
 						<li><a href="mail.html">Contact Us</a></li>
 						<li><a href="codes.html">Short Codes</a></li>
@@ -983,7 +857,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="col-md-3 w3_footer_grid">
 					<h3>Category</h3>
-					<ul class="info">
+					<ul class="info"> 
 						<li><a href="products.html">Mobiles</a></li>
 						<li><a href="products1.html">Laptops</a></li>
 						<li><a href="products.html">Purifiers</a></li>
@@ -993,7 +867,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="col-md-3 w3_footer_grid">
 					<h3>Profile</h3>
-					<ul class="info">
+					<ul class="info"> 
 						<li><a href="index.html">Home</a></li>
 						<li><a href="products.html">Today's Deals</a></li>
 					</ul>
@@ -1007,41 +881,52 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</ul>
 					</div>
 				</div>
-				<div class="clearfix"></div>
+				<div class="clearfix"> </div>
 			</div>
 		</div>
 		<div class="footer-copy">
 			<div class="footer-copy1">
 				<div class="footer-copy-pos">
-					<a href="#home1" class="scroll"><img src="images/arrow.png"
-						alt=" " class="img-responsive" /></a>
+					<a href="#home1" class="scroll"><img src="images/arrow.png" alt=" " class="img-responsive" /></a>
 				</div>
 			</div>
 			<div class="container">
-				<p>
-					&copy; 2017 Electronic Store. All rights reserved | Design by <a
-						href="http://w3layouts.com/">W3layouts</a>
-				</p>
+				<p>&copy; 2017 Electronic Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 			</div>
 		</div>
-	</div>
-	<!-- //footer -->
-	<!-- cart-js -->
-	<script src="/js/minicart.js"></script>
-	<script th:inline="javascript">
-		w3ls.render();
+			</div>
+			<div class="footer-copy">
+				<div class="footer-copy1">
+					<div class="footer-copy-pos">
+						<a href="#home1" class="scroll"><img src="images/arrow.png"
+							alt=" " class="img-responsive" /></a>
+					</div>
+				</div>
+				<div class="container">
+					<p>
+						&copy; 2017 Electronic Store. All rights reserved | Design by <a
+							href="http://w3layouts.com/">W3layouts</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- //footer -->
+		<!-- cart-js -->
+		<script src="/js/minicart.js"></script>
+		<script th:inline="javascript">
+			w3ls.render();
 
-		w3ls.cart.on('w3sb_checkout', function(evt) {
-			var items, len, i;
+			w3ls.cart.on('w3sb_checkout', function(evt) {
+				var items, len, i;
 
-			if (this.subtotal() > 0) {
-				items = this.items();
+				if (this.subtotal() > 0) {
+					items = this.items();
 
-				for (i = 0, len = items.length; i < len; i++) {
+					for (i = 0, len = items.length; i < len; i++) {
+					}
 				}
-			}
-		});
-	</script>
-	<!-- //cart-js -->
+			});
+		</script>
+		<!-- //cart-js -->
 </body>
 </html>
